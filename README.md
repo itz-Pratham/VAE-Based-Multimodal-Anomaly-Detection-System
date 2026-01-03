@@ -11,7 +11,6 @@
 
 ### Project Type
 Industry‑grade Machine Learning / Computer Vision / Time‑Series System  
-Designed at **full‑time ML Engineer depth**
 
 ### Problem Statement
 Industrial machines operate continuously under varying conditions. Unexpected failures cause costly downtime, safety risks, and production losses. However, failure data is rare, noisy, and often unlabeled, making supervised approaches impractical.
