@@ -1,0 +1,24 @@
+# docker-compose.yml (at Project Root)
+services:
+  backend:
+    build:
+      context: .  # Context is now the current folder (Project Root)
+      dockerfile: dashboard/docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - WEBHOOK_URL=${WEBHOOK_URL:-} # Resolves the warning
+      - PYTHONPATH=/app
+    volumes:
+      - ./models:/app/models:ro # Mount root models folder
+    restart: always
+
+  frontend:
+    build:
+      context: .
+      dockerfile: dashboard/docker/Dockerfile.frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: always
